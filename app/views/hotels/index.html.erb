@@ -1,0 +1,30 @@
+<div class="container">
+<h1 class="text-success">Listing Hotels</h1>
+
+<table class="table table-hover">
+  <tr>
+    <th>Name</th>
+    <th>Adderss</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @hotels.each do |hotel| %>
+  <tr class="success">
+    <td><%= hotel.name %></td>
+    <td><%= hotel.adderss %></td>
+    
+    <td><%= link_to 'Show', hotel , :class=>"btn btn-primary" %></td>
+    <td><%= link_to 'Edit', edit_hotel_path(hotel) , :class=>"btn btn-danger" %></td>
+    <td><%= link_to 'Destroy', hotel,:class=>"btn btn-warning", :method => :delete, :data => { :confirm => 'Are you sure?' } %></td>
+    
+  </tr>
+
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Hotel', new_hotel_path , :class=>"btn btn-success" %>
+</div>

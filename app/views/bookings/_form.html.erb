@@ -1,0 +1,44 @@
+
+<div class="container">
+<%= simple_form_for(@booking) do |f| %>
+  <% if @booking.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@booking.errors.count, "error") %> prohibited this booking from being saved:</h2>
+
+      <ul>
+      <% @booking.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+    
+  
+   
+    <%= f.association :customer , :include_blank => ('Select Name') %>
+  
+
+  
+  
+    
+    <%= f.association :hotel , :include_blank => ('Select Hotel') %>
+  
+   
+    <%= f.association :room , :include_blank => ('Select Room') , :label_method => lambda{|room| "#{room.room_type}"}%>
+  
+    <%= f.label :date_from %><br />
+    <%= f.datetime_select :date_from %>
+  
+    <%= f.label :date_to %><br />
+    <%= f.datetime_select :date_to %>
+  
+    <%= f.label :day_booking %><br />
+    <%= f.number_field :day_booking %>
+  
+
+  <div class="actions">
+    <%= f.submit "Create" , :class=>"btn btn-success"%>
+  </div>
+<% end %>
+
+</div>

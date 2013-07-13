@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  hotel: 
+  room_type: MyString
+  room_price: MyString
+
+two:
+  hotel: 
+  room_type: MyString
+  room_price: MyString

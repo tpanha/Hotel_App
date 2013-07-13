@@ -1,0 +1,29 @@
+<div class="container">
+<h1 class="text-success">Listing Rooms</h1>
+
+<table class="table tabel-hover">
+  <tr>
+    <th>Hotel Name</th>
+    <th>Room type</th>
+    <th>Room price</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @rooms.each do |room| %>
+  <tr class="success">
+    <td><%= room.hotel.name %></td>
+    <td><%= room.room_type %></td>
+    <td><%= room.room_price %></td>
+    <td><%= link_to 'Show', room , :class=>"btn btn-primary"%></td>
+    <td><%= link_to 'Edit', edit_room_path(room) , :class=>"btn btn-danger"%></td>
+    <td><%= link_to 'Destroy', room,:class=>"btn btn-warning", :method => :delete, :data => { :confirm => 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Room', new_room_path , :class=>"btn btn-success" %>
+</div>

@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  customer: 
+  hotel: 
+  room: 
+  date_from: 2013-07-12 17:28:47
+  date_to: 2013-07-12 17:28:47
+  day_booking: 1
+
+two:
+  customer: 
+  hotel: 
+  room: 
+  date_from: 2013-07-12 17:28:47
+  date_to: 2013-07-12 17:28:47
+  day_booking: 1

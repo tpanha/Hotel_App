@@ -1,0 +1,22 @@
+<div class="container">
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Hotel:</b>
+  <%= @room.hotel.name %>
+</p>
+
+<p>
+  <b>Room type:</b>
+  <%= @room.room_type %>
+</p>
+
+<p>
+  <b>Room price:</b>
+  <%= @room.room_price %>
+</p>
+
+
+<%= link_to 'Edit', edit_room_path(@room) , :class=>"btn btn-danger"%> 
+<%= link_to 'Back', rooms_path , :class=>"btn btn-warning"%>
+</div>

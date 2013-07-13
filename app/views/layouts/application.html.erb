@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>HotelApp</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+    <div class="navbar">
+    <div class="navbar-inner">
+    <div class="container-fluid">
+    <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+    </a>
+    
+    <%= link_to "Hotel Reservation", home_index_path  , :class=>"brand" , :name=>"top" %>
+    <div class="nav-collapse collapse">
+    <ul class="nav">
+    <li><%= link_to '<i class="icon-home"></i>Home'.html_safe, home_index_path %></li>
+
+    <li><%= link_to "Contact", home_contact_path %></li>
+    <li><%= link_to "About Us", home_about_path %></li>
+    
+    
+    
+    
+    </ul>
+    <ul class="nav pull-right">
+    	
+
+            <% if user_signed_in? %>
+            
+        <li><%= link_to '<i class="icon-user"></i>Log Out '.html_safe, destroy_user_session_path, :method => :delete %></li>
+
+            <% else %>
+
+        <li><%= link_to '<i class="icon-chevron-right"></i>Register'.html_safe, new_user_registration_path %></li>
+        <li><%= link_to '<i class="icon-user"></i>Log In'.html_safe, new_user_session_path %></li>
+
+        
+    	
+            <% end %>
+    </ul>
+    
+    </div>
+    </div>
+    <!--/.nav-collapse -->
+    </div>
+    <!--/.container-fluid -->
+    </div>
+    <!--/.navbar-inner -->
+    </div>
+    <!--/.navbar -->
+<%= yield %>
+
+</body>
+</html>

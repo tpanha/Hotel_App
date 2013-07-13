@@ -1,0 +1,37 @@
+<div class="container">
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Customer:</b>
+  <%= @booking.customer.name %>
+</p>
+
+<p>
+  <b>Hotel:</b>
+  <%= @booking.hotel.name %>
+</p>
+
+<p>
+  <b>Room:</b>
+  <%= @booking.room.room_type %>
+</p>
+
+<p>
+  <b>Date from:</b>
+  <%= @booking.date_from %>
+</p>
+
+<p>
+  <b>Date to:</b>
+  <%= @booking.date_to %>
+</p>
+
+<p>
+  <b>Day booking:</b>
+  <%= @booking.day_booking %>
+</p>
+
+
+<%= link_to 'Edit', edit_booking_path(@booking) , :class=>"btn btn-danger" %> 
+<%= link_to 'Back', bookings_path , :class=>"btn btn-warning"%>
+</div>

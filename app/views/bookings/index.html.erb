@@ -1,0 +1,35 @@
+<div class="container">
+<h1 class="text-success">Listing Bookings</h1>
+
+<table class="table table-hover">
+  <tr>
+    <th>Customer</th>
+    <th>Hotel</th>
+    <th>Room</th>
+    <th>Date from</th>
+    <th>Date to</th>
+    <th>Day booking</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @bookings.each do |booking| %>
+  <tr class="success">
+    <td><%= booking.customer.name %></td>
+    <td><%= booking.hotel.name %></td>
+    <td><%= booking.room.room_type %></td>
+    <td><%= booking.date_from.strftime("%B %e, %y") %></td>
+    <td><%= booking.date_to.strftime("%B %e, %y") %></td>
+    <td><%= booking.day_booking %></td>
+    <td><%= link_to 'Show', booking , :class=>"btn btn-primary" %></td>
+    <td><%= link_to 'Edit', edit_booking_path(booking) , :class=> "btn btn-danger" %></td>
+    <td><%= link_to 'Destroy', booking , :class=>"btn btn-warning", :method => :delete, :data => { :confirm => 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Booking', new_booking_path , :class=>"btn btn-success"%>
+</div>
